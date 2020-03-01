@@ -45,9 +45,39 @@
 
 .user {
   height: 80px;
+  border-radius: 4px;
   background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .left,
+  .rigth {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .user + .user {
   margin-top: 18px;
+}
+
+.avatar {
+  padding: 0 16px;
+
+  img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50px;
+  }
+}
+.fio {
+  margin-right: 44px;
+}
+
+.date {
+
+}
+.status {
+margin-right: 46px;
+margin-left:54px ;
 }

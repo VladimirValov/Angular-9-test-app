@@ -5,10 +5,21 @@
 </div>
 
 <div class="users-container">
-    <div class="user">Иванов</div>
-    <div class="user">Иванов</div>
-    <div class="user">Иванов</div>
-    <div class="user">Иванов</div>
+  <div class="user" *ngFor="let user of users">
+    <div class="left">
+      <div class="avatar"><img [src]="user.avatar" alt="" /></div>
+      <div class="fio">
+        {{ user.name }} {{ user.fname[0] }}. {{ user.mname[0] }}.
+      </div>
+      <div class="balance">Баланс: {{ user.balance }}</div>
+    </div>
+    <div class="rigth">
+      <div class="date">Последние изменения: {{ user.date | date }}</div>
+      <div class="status">
+        {{ user.status === 1 ? 'Подписка активна' : user.status }}
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- <router-outlet></router-outlet> -->
