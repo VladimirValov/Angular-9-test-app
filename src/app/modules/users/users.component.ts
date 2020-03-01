@@ -20,7 +20,7 @@ export class UsersComponent implements OnInit, OnDestroy {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    interval(5000)
+    this.sub = interval(5000)
       .pipe(
         startWith(0),
         switchMap(() => this.userService.getUsers())
