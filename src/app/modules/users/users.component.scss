@@ -1,12 +1,8 @@
-.users-container,
-.nav-container {
-  padding: 0 48px;
-  margin-bottom: 48px;
-}
-
 .nav-container {
   width: 100vw;
   height: 47px;
+  padding: 0 48px;
+  margin-bottom: 48px;
   box-sizing: border-box;
   background-color: #fff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
@@ -41,43 +37,4 @@
 
 .nav-item + .nav-item {
   margin-left: 36px;
-}
-
-.user {
-  height: 80px;
-  border-radius: 4px;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  .left,
-  .rigth {
-    display: flex;
-    align-items: center;
-  }
-}
-
-.user + .user {
-  margin-top: 18px;
-}
-
-.avatar {
-  padding: 0 16px;
-
-  img {
-    width: 48px;
-    height: 48px;
-    border-radius: 50px;
-  }
-}
-.fio {
-  margin-right: 44px;
-}
-
-.date {
-
-}
-.status {
-margin-right: 46px;
-margin-left:54px ;
 }
