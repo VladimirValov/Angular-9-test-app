@@ -9,9 +9,7 @@ import { AuthService } from '../services';
 export class LoginComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-    this.onSubmit();
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
     const authData = {
