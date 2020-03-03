@@ -19,6 +19,10 @@ export class AuthService {
     );
   }
 
+  logout() {
+    localStorage.removeItem('access_token');
+  }
+
   isLoginIn() {
     return !!localStorage.getItem('access_token');
   }
