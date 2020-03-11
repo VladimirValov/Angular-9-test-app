@@ -1,12 +1,12 @@
 <div class="form-container">
-  <form>
+  <form [formGroup]="loginForm">
     <div class="row">
-      <input type="text" name="login" placeholder="Enter login" />
+      <input type="text" formControlName="login" placeholder="Enter login" />
     </div>
     <div class="row">
       <input
         [type]="inputType"
-        name="password"
+        formControlName="password"
         placeholder="Enter password"
       />
       <span class="eye" (click)="showPass = !showPass"

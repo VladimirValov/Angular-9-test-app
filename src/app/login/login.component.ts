@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services';
+import { AuthService, AuthData } from '../services';
+import {
+  FormControl,
+  FormBuilder,
+  FormGroup,
+  Validators
+} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,17 +15,29 @@ import { AuthService } from '../services';
 export class LoginComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
-  showPass = false;
+  mockAuthData: AuthData = {
+    login: 'test@example.com',
+    password: '1q2w3e'
+  };
 
-  ngOnInit(): void {}
+  showPass = false;
+  loginForm: FormGroup;
+
+  ngOnInit(): void {
+    this.loginForm = this.createForm(this.mockAuthData);
+  }
 
   onSubmit() {
-    const authData = {
-      login: 'test@example.com',
-      password: '1q2w3e'
-    };
+    this.authService.login(this.loginForm.value).subscribe();
+  }
 
-    this.authService.login(authData).subscribe();
+  createForm({login = '', password = ''}) {
+    return new FormGroup({
+      login: new FormControl(login, [Validators.required]),
+      password: new FormControl(password, [
+        Validators.required
+      ])
+    });
   }
 
   get inputType() {

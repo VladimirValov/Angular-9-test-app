@@ -2,13 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
+
+export interface AuthData {
+  login: string;
+  password: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
-  login(authData) {
+  login(authData: AuthData) {
     const url = 'https://bumagi-frontend-test.herokuapp.com/auth';
 
     return this.http.post(url, authData).pipe(
