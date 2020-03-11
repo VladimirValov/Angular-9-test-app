@@ -9,6 +9,8 @@ import { AuthService } from '../services';
 export class LoginComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
+  showPass = false;
+
   ngOnInit(): void {}
 
   onSubmit() {
@@ -18,5 +20,9 @@ export class LoginComponent implements OnInit {
     };
 
     this.authService.login(authData).subscribe();
+  }
+
+  get inputType() {
+    return this.showPass ? 'text' : 'password';
   }
 }
